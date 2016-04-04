@@ -4,6 +4,7 @@ exports.arraysAnswers = {
 
   indexOf : function(arr, item) {
     return arr.indexOf(item);
+    //could've done without array method, but this is faster
   },
 
   sum : function(arr) {
@@ -20,7 +21,7 @@ exports.arraysAnswers = {
 
   removeWithoutCopy : function(arr, item) {
     var x = 0;
-    while(x<arr.length) {
+    while(x<arr.length) { //loop through and splice (remove) if it's the item
       if(arr[x]===item) {
         arr.splice(x,1);
       }
@@ -71,10 +72,10 @@ exports.arraysAnswers = {
   },
 
   duplicates : function(arr) {
-    arr.sort();
+    arr.sort(); //sort first so that duplicates appear consecutively
     var results = [];
     arr.forEach(function(el,ind,array) {
-      if(array[ind+1]===el && results.indexOf(el)===-1) {
+      if(array[ind+1]===el && results.indexOf(el)===-1) { //if item appears consecutively, but hasn't already been pushed into results
         results.push(el);
       }
     })

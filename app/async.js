@@ -4,9 +4,9 @@ exports.asyncAnswers = {
   async : function(value) {
   	return new Promise(
   		function(resolve,reject) {
-  			resolve(value);
+  			resolve(value); //tests have output expecting to be input
   		})
-  	.catch(function(error) {
+  	.catch(function(error) { //error handling
   		throw error;
   	})
   },
@@ -16,7 +16,7 @@ exports.asyncAnswers = {
   	.then(function(data) {
   		var arr = [];
   		data.people.forEach(function(el) {
-  			arr.push(el.name);
+  			arr.push(el.name); //data.people is an array from the AJAX call.. get the names
   		})
   		return arr.sort();
   	},function(error) {

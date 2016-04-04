@@ -5,7 +5,7 @@ exports.modulesAnswers = {
   	var obj = {};
   	obj.greeting = str1;
   	obj.name = str2;
-  	obj.sayIt = function() {
+  	obj.sayIt = function() { //method on the return object's prototype
   		return this.greeting + ', ' + this.name;
   	}
   	return obj;

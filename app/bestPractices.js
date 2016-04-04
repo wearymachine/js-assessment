@@ -8,7 +8,7 @@ exports = (typeof window === 'undefined') ? global : window;
 
 exports.bestPracticesAnswers = {
   globals : function() {
-    var myObject = {
+    var myObject = { //need to make 'var' or else it's global
       name : 'Jory'
     };
 
@@ -16,7 +16,7 @@ exports.bestPracticesAnswers = {
   },
 
   functions : function(flag) {
-    var getValue;
+    var getValue; //declare the function up here, and the specific instances of what function it is, below
     if (flag) {
       getValue = function() {return 'a';}
     } else {
@@ -27,8 +27,8 @@ exports.bestPracticesAnswers = {
   },
 
   parseInt : function(num) {
-    var pattern = /[0-9]/;
-    for(var x=0; x<num.length; x++) {
+    var pattern = /[0-9]/; //REGEX to test for number
+    for(var x=0; x<num.length; x++) { //loop through and get numbers.. exiting on first instance of a non-numeric character
       if(pattern.test(num[x])===false) {
         break;
       }
